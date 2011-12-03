@@ -1,1 +1,28 @@
-Hello world 
+Boosterman
+
+To view the code right click on boosterman.py and click edit.
+It is better viewed in IDLE then other word processers.
+
+
+
+
+
+How to play:
+
+Spacebar     : Jump
+
+Left control : Jetpack
+
+Left         : Left
+
+Right	     : Right
+
+Up           : UP
+
+Down         : Down
+
+Esc          : Quit
+
+
+
+Hitting the spike kills you
