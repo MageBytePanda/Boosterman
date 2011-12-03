@@ -1,0 +1,99 @@
+Data Dictionary 
+
+
+SW				#hold int value for screen width				
+SH					#hold int value for screen height
+
+
+
+size					#holds the int values of the screen width and height               
+screen				 #initilises the screen
+
+
+global clock                 int #sets the global clock that ticks
+clock 
+ 
+
+running 					#holds a true or false value 
+
+
+
+manR              #lists that contain in values. Thes hold the pictures of my game
+manrect			#variables with rect after them are rectangle objects that hold a x and y value
+manL
+manwalkR
+manwalkL
+manwalkR2
+manwalkL2
+jetpackonR
+jetpackonL
+jetpackoffR
+jetpackoffL
+brick 
+dead 
+deadrect
+brickrect
+spike
+spikerect
+level1
+level2
+level3
+level4
+level5
+lvl1
+lvl2
+lvl3
+lvl4
+lvl5
+load
+levelrect
+menuman
+menumanrect
+menu1
+menurect
+menuman1
+
+
+back                                             # these are the lists that hold the different levels pixels. the list has int value
+lvl 
+one 
+two 
+three
+four
+five
+
+
+
+
+
+
+
+Xpos			# the change in the x position each loop  int
+Ypos 			# the change in the y psition each loop   int
+gravity 			# gravity on the man int
+jump			# checking varable to see if he is in the air  int
+keyCheck 		# check if key is down
+moveCheck 		# check if this loops position is the same as the last loop
+direction			# direction check int
+jumping			# check if jetpacking  int 						
+
+menu 			# loads picture into variable list
+
+start			#initising variable
+
+up			# moves up by this many pixels each loop the opening moving screen
+left 			# moves to the left by this many pixels each loop the opening moving screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
