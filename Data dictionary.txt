@@ -75,8 +75,11 @@ start			#initialising variable - spelling fix MegaBytePanda
 up				# moves up by this many pixels each loop the opening moving screen
 left 			# moves to the left by this many pixels each loop the opening moving screen
 
-
-
+spiky			#Class for the spike ball - Josh F
+counter			#Counter to show how many instances of the spiky class there is -Josh F
+x				#Holds int. Spikes more horizontal this many pixels every cycle. -Josh F
+y				#Holds int. Spikes more vertical this many pixels every cycle. -Josh F
+split			#after this many horizontal bounces the spike splits - Josh F
 
 
 

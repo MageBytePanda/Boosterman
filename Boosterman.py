@@ -1,4 +1,3 @@
-#i esol eht emag
 import pygame, sys
 from pygame.locals import*
 
@@ -35,8 +34,7 @@ def death():                            # death funtion, runs he player dies
                                 running = False
                         elif event.type == KEYDOWN: 
                                 running = False
-
-
+#screen.blit(level, levelrect)
 
 
                 
@@ -62,9 +60,7 @@ def main():
 
 
         
-        spike = pygame.image.load("spike.bmp")
-        spikerect = spike.get_rect()
-        spikerect.topleft = (550, 500)
+        
 
 
 
@@ -96,7 +92,7 @@ def main():
         five = []
         level = level1
 
-        print 'Loading level 1....'#loads the fist level durning the loading time
+        print 'Loading level 1....'#loads the first level during the loading time
         for x in range(0, 600):
                 tmpList = []
                 for y in range(0, 600):
@@ -109,17 +105,10 @@ def main():
                 one.append(tmpList)
         print "Done"
 
-
-
-
-        x = 2
-        y = 2
-                
-        spike = pygame.image.load("spike.bmp")
-        spikerect = spike.get_rect()   
-        spikerect.topleft = (500,401) 
         
 
+
+        
                 
 
 
@@ -164,7 +153,8 @@ def main():
         print "Loading level 5...."
         for x in range(0, 600):
                 tmpList = []
-                for y in range(0, 600):
+                for y in range(0, 600):class spiky:
+                
                     tmpColour = lvl5.get_at((x, y))
                     if tmpColour == (255, 255, 255, 255):
                         tmpList.append(1)
@@ -193,10 +183,46 @@ def main():
         jumping= 0
         manrect.bottomright = (65,500)
 
+        x = 2
+        y = 2
+           
+      
+        start = (500,350)
+        class spiky:                                                            #This is the new spike class. It now perpetuates itself and spawns in different directions
+                counter = -1
+                def __init__(self, topleft):
+                        self.spike = pygame.image.load("spike.bmp")
+                        self.rect = self.spike.get_rect()
+                        self.rect.topleft = topleft
+                        spiky.counter += 1
+                        self.x = 2
+                        self.y = 2
+                        self.split = 0
+                def move(self):
+                        if self.split != 5:        
+                                self.pix = self.rect.move(self.x,self.y)                                                       #moves the spike around and screen and checks if that object had split yet - Josh F
 
+                        if back[self.pix.right][self.pix.centery] == 1 or back[self.pix.left][self.pix.centery] == 1:
+                                self.x = self.x * -1
+                                self.split += 1
+                        
+                        self.pix = self.rect.move(self.x,self.y)
+                        if back[self.pix.centerx][self.pix.top] == 1 or back[self.pix.centerx][self.pix.bottom] == 1:
+                                self.y = self.y * -1
+                        elif back[self.pix.left][self.pix.top] == 1 or back[self.pix.right][self.pix.top] == 1:
+                                self.y = self.y * -1
+                        self.rect = self.rect.move(self.x,self.y)
 
+        
+        
+        spikeList = [spiky(start)]
+        #spike2.move()
+        #screen.blit(spike2.spike,spike2.rect)
+        #if manrect.colliderect(spikerect) == True:
+        #death()
+        #running = False
 
-
+        #screen.blit(spike,rect)
         
         while running is True:     #main loop
                 clock.tick(40)
@@ -215,8 +241,8 @@ def main():
                                         keyCheck = keyCheck + 2
                                         direction = 2
                                 elif event.key == K_SPACE:
-                                       if moveCheck == manrect.top:       # jump key
-                                                Ypos = -15
+                                       if moveCheck == manrect.top:       # jump key 
+                                                Ypos = -11                      #Changed the value of Ypos from 15 to 11 - Josh F
                                                 jumping= 1
                                 elif event.key == K_LCTRL:              # jetpack key
                                         jump = 1
@@ -277,7 +303,7 @@ def main():
                 if jumping== 1 and moveCheck != manrect.top:                    #makes man fall whether gravity or constant
                         Ypos = Ypos + gravity
                 elif jumping== 0:
-                        Ypos = Ypos + 1
+                        Ypos = Ypos + gravity
 
 
                 if jump == 1 :                                                  # Makes man move on the y axis and shows the sprites
@@ -305,7 +331,7 @@ def main():
 
 
                 
-
+                '''
                 pix = spikerect.move(x,y)                                                       #moves monster called spike
                 if back[pix.right][pix.centery] == 1 or back[pix.left][pix.centery] == 1:
                         x = x * -1
@@ -315,12 +341,13 @@ def main():
                 elif back[pix.left][pix.top] == 1 or back[pix.right][pix.top] == 1:
                         y = y * -1
                 spikerect = spikerect.move(x,y)
-                
+               
 
 
                 if manrect.colliderect(spikerect) == True:
                         death()
                         running = False
+                '''
 
                 moveCheck = manrect.top
                 pixcheck = manrect.move(Xpos,Ypos)
@@ -401,56 +428,11 @@ def main():
                                 pop = pop + 1
 
 
-
-
               
                 pixcheck = 0        
                 manrect = manrect.move(Xpos,Ypos)
 
-
-                '''
-                if manrect.colliderect(brickrect) == True :  # controls the brick                                               #unused brick code
-                        if Ypos < 0:
-                                if manrect.collidepoint(brickrect.left,brickrect.top):
-                                        manrect.right = brickrect.left
-
-                                elif manrect.collidepoint(brickrect.right,brickrect.top):
-                                        manrect.left = brickrect.right
-
-                        elif manrect.collidepoint(brickrect.left,brickrect.centery - 13):
-                                manrect.right = brickrect.left
-                                
-                        elif manrect.collidepoint(brickrect.right,brickrect.centery -13):
-                                manrect.left = brickrect.right
-                                        
-                        elif manrect.collidepoint(brickrect.left,brickrect.top):
-                                manrect.bottom = brickrect.top
-                                
-                        elif manrect.collidepoint(brickrect.right,brickrect.top):
-                                manrect.bottom = brickrect.top
-                                
-                        if manrect.collidepoint(brickrect.centerx,brickrect.top):
-                                manrect.bottom = brickrect.top
-                        elif manrect.collidepoint(brickrect.centerx,brickrect.bottom):
-                                manrect.top = brickrect.bottom
-
-                        if Ypos > 0:
-                                
-                                if manrect.collidepoint(brickrect.left,brickrect.bottom):
-                                        manrect.right = brickrect.left
-                                        Ypos = 6
-                        
-                                elif manrect.collidepoint(brickrect.right,brickrect.bottom):
-                                        manrect.left = brickrect.right
-                                        Ypos = 6
-                                        
-                        elif manrect.collidepoint(brickrect.left,brickrect.bottom):
-                                manrect.top = brickrect.bottom
-                                
-                        elif manrect.collidepoint(brickrect.right,brickrect.bottom):
-                                manrect.top = brickrect.bottom
-                '''
-                                
+   
                                 
                 if manrect.left < 0:   #    This is the boundry values so the man cannot move outside the screen
                         manrect.left = 0
@@ -470,11 +452,33 @@ def main():
 
 
                 
-                screen.blit(level, levelrect)
-                screen.blit(man, manrect)                                               # blits the game to the screen
-                screen.blit(spike,spikerect)
-               # screen.blit(brick, brickrect)
-                pygame.display.flip()
+
+                if running == True:                                                     #This if statement stops the program crashing and creating an error message.
+                
+                        screen.blit(level, levelrect)
+                        screen.blit(man, manrect)                                               # blits the game to the screen
+                
+                        #screen.blit(spike,spikerect)
+                        
+                        count = 0                                                               #Changed spike display. This displays all the new spikes and perpetuates new spikes - Josh F
+                        while count <= spiky.counter:
+                                spikeList[count].move()
+                                screen.blit(spikeList[count].spike,spikeList[count].rect)
+                                if spikeList[spiky.counter].split == 5:                     
+                                                                                                                               
+                                        spikeList.append(spiky(spikeList[spiky.counter].rect.topleft))          #appends the array to add more spike objects - Josh F
+                                        spikeList[spiky.counter].move()
+                                #screen.blit(spikeList[spiky.counter].spike,spikeList[spiky.counter].rect)
+                                
+                                if manrect.colliderect(spikeList[count].rect) == True:
+                                        death()
+                                        running = False
+                                count += 1
+                        
+
+                
+                        
+                        pygame.display.flip()                           #refreshes the page - Josh F
                 
 
 
@@ -503,6 +507,7 @@ def menu():                                                                     
 
                         if event.type == pygame.QUIT:                                   #check if play or quit
                                 pygame.display.quit()
+                                
                                 start == 0
                         elif event.type == KEYDOWN:     # check if key is down
                                 if event.key == K_RETURN:
@@ -510,6 +515,7 @@ def menu():                                                                     
                                         runnning = True 
                                 elif event.key == K_ESCAPE:
                                         start = 0
+                                        
                                         pygame.display.quit()
                 
                 menumanrect = menumanrect.move(left,up)
@@ -523,10 +529,11 @@ def menu():                                                                     
                 elif menumanrect.right > 325:
                         left = left * -1
                         guy = menuman
-                screen.blit(menu, menurect)
-                screen.blit(guy,menumanrect)
+                if start !=0:
+                        screen.blit(menu, menurect)
+                        screen.blit(guy,menumanrect)
 
-                pygame.display.flip()
+                        pygame.display.flip()   
 
 
 menu()
