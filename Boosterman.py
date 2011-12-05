@@ -16,7 +16,7 @@ screen = pygame.display.set_mode(size)       #initilises the screen
 
 global dead,deadrect,clock                  #sets the global clock
 clock = pygame.time.Clock()
-dead = pygame.image.load("dead.bmp")
+dead = pygame.image.load("Bitmaps/dead.bmp")
 deadrect = dead.get_rect()
 deadrect.topleft = (100,250)
 
@@ -40,18 +40,18 @@ def death():                            # death funtion, runs he player dies
                 
 def main():
 
-        manR = pygame.image.load("manR.bmp")
+        manR = pygame.image.load("Bitmaps/manR.bmp")
         manrect = manR.get_rect()
-        manL = pygame.image.load("manL.bmp")
-        manwalkR = pygame.image.load("manwalkR.bmp")     # picture loaded into lists
-        manwalkL = pygame.image.load("manwalkL.bmp")
-        manwalkR2 = pygame.image.load("manwalkR2.bmp")
-        manwalkL2 = pygame.image.load("manwalkL2.bmp")
-        jetpackonR = pygame.image.load("jetpackonR.bmp")
-        jetpackonL = pygame.image.load("jetpackonL.bmp")
-        jetpackoffR = pygame.image.load("jetpackoffR.bmp")
-        jetpackoffL = pygame.image.load("jetpackoffL.bmp")
-        brick = pygame.image.load("brick.bmp")
+        manL = pygame.image.load("Bitmaps/manL.bmp")
+        manwalkR = pygame.image.load("Bitmaps/manwalkR.bmp")     # picture loaded into lists
+        manwalkL = pygame.image.load("Bitmaps/manwalkL.bmp")
+        manwalkR2 = pygame.image.load("Bitmaps/manwalkR2.bmp")
+        manwalkL2 = pygame.image.load("Bitmaps/manwalkL2.bmp")
+        jetpackonR = pygame.image.load("Bitmaps/jetpackonR.bmp")
+        jetpackonL = pygame.image.load("Bitmaps/jetpackonL.bmp")
+        jetpackoffR = pygame.image.load("Bitmaps/jetpackoffR.bmp")
+        jetpackoffL = pygame.image.load("Bitmaps/jetpackoffL.bmp")
+        brick = pygame.image.load("Bitmaps/brick.bmp")
         brickrect = brick.get_rect()
 
         brickrect = brickrect.move(0, 0)
@@ -66,17 +66,17 @@ def main():
 
         
         
-        level1 = pygame.image.load("level 1.bmp")
-        level2 = pygame.image.load("level 2.bmp")
-        level3 = pygame.image.load("level 3.bmp")
-        level4 = pygame.image.load("level 4.bmp")
-        level5 = pygame.image.load("level 5.bmp")
-        lvl1 = pygame.image.load("lvl 1.bmp")
-        lvl2 = pygame.image.load("lvl 2.bmp")
-        lvl3 = pygame.image.load("lvl 3.bmp")
-        lvl4 = pygame.image.load("lvl 4.bmp")
-        lvl5 = pygame.image.load("lvl 5.bmp")
-        load = pygame.image.load("loading.bmp")
+        level1 = pygame.image.load("Bitmaps/level 1.bmp")
+        level2 = pygame.image.load("Bitmaps/level 2.bmp")
+        level3 = pygame.image.load("Bitmaps/level 3.bmp")
+        level4 = pygame.image.load("Bitmaps/level 4.bmp")
+        level5 = pygame.image.load("Bitmaps/level 5.bmp")
+        lvl1 = pygame.image.load("Bitmaps/lvl 1.bmp")
+        lvl2 = pygame.image.load("Bitmaps/lvl 2.bmp")
+        lvl3 = pygame.image.load("Bitmaps/lvl 3.bmp")
+        lvl4 = pygame.image.load("Bitmaps/lvl 4.bmp")
+        lvl5 = pygame.image.load("Bitmaps/lvl 5.bmp")
+        load = pygame.image.load("Bitmaps/loading.bmp")
         levelrect = level1.get_rect()
 
         screen.blit(load, levelrect)
@@ -191,7 +191,7 @@ def main():
         class spiky:                                                            #This is the new spike class. It now perpetuates itself and spawns in different directions
                 counter = -1
                 def __init__(self, topleft):
-                        self.spike = pygame.image.load("spike.bmp")
+                        self.spike = pygame.image.load("Bitmaps/spike.bmp")
                         self.rect = self.spike.get_rect()
                         self.rect.topleft = topleft
                         spiky.counter += 1
@@ -484,17 +484,17 @@ def main():
 
 def menu():                                                                     # start menu function
         runnning = True 
-        menu1 = pygame.image.load("menu1.bmp")
+        menu1 = pygame.image.load("Bitmaps/menu1.bmp")
         menurect = menu1.get_rect()
         menu = menu1
         screen.blit(menu, menurect)
 
         pygame.display.flip()
         start = 1
-        menuman = pygame.image.load("menuman.bmp")
+        menuman = pygame.image.load("Bitmaps/menuman.bmp")
         menumanrect= menuman.get_rect()
         menumanrect.topleft = (125,150)
-        menuman1 = pygame.image.load("menuman1.bmp")
+        menuman1 = pygame.image.load("Bitmaps/menuman1.bmp")
         guy = menuman
 
         

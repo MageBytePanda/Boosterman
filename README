@@ -4,9 +4,6 @@ To view the code right click on boosterman.py and click edit.
 It is better viewed in IDLE then other word processers.
 
 
-
-
-
 How to play:
 
 Spacebar     : Jump
@@ -25,4 +22,6 @@ Esc          : Quit
 
 
 
-Hitting the spike kills you
+Hitting the spikeballs will kill you.
+The spikes will spawn non stop until you either die or give up.
+This game has no real objective yet but to dodge the spike balls.

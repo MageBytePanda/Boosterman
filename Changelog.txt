@@ -1,4 +1,4 @@
-Changes made to the program
+Changes made
 
 #Changed the up jump value from 15 to 11.
 #Changed the white collisions bmp lvl.bmp so he player wouldnt get stuck.
@@ -9,3 +9,4 @@ Changes made to the program
 #Spike is now a class. Never ending spawning spike balls.
 #Changed Data dictonary.txt to add a few variables from the spike class.
 #Changed lvl.bmp again to fix some collision issues.
+#Removed unused files and moves the bitmaps into a seperate folder
