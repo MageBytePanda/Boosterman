@@ -1,0 +1,11 @@
+Changes made to the program
+
+#Changed the up jump value from 15 to 11.
+#Changed the white collisions bmp lvl.bmp so he player wouldnt get stuck.
+#Fixed spelling error in datadictionary.txt.
+#Fixed format of data dictionary.
+#Fixed pygame.display.quit() error occuring when closing down game.
+#Changed the one spike enemey into an array.
+#Spike is now a class. Never ending spawning spike balls.
+#Changed Data dictonary.txt to add a few variables from the spike class.
+#Changed lvl.bmp again to fix some collision issues.
