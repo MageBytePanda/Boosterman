@@ -5,9 +5,6 @@ It is better viewed in IDLE then other word processers.
 
 To be able to run or edit the game you will need to download python 2.7.1 and pygame for windows
 
-
-
-
 How to play:
 
 Spacebar     : Jump
@@ -26,4 +23,6 @@ Esc          : Quit
 
 
 
-Hitting the spike kills you
+Hitting the spikeballs will kill you.
+The spikes will spawn non stop until you either die or give up.
+This game has no real objective yet but to dodge the spike balls.
